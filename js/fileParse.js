@@ -9,6 +9,7 @@
       callback.call(this, this.responseText);
     });
     request.open('GET', './tuizzes/'+name);
+    request.send();
   };
   
   if (!window.Tuizzy) {
