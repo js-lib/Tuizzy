@@ -8,7 +8,7 @@
     request.addEventListener('load', function() {
       callback.call(this, this.responseText);
     });
-    request.open('GET', './tuizzes/'+name);
+    request.open('GET', './tuizzes/'+name+'.tuiz');
     request.send();
   };
   
