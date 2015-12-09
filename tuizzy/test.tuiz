@@ -1,0 +1,16 @@
+{
+  "name": "Test",
+  "desc": "This is a test tuiz. It is fairly meaningless.",
+  "time": "30:00",
+  "secs": [
+    {
+      "name": "Section 1",
+      "desc": "In this section, you will do some pointless stuff.",
+      "time": "15:00",
+      "type": "random",
+      "tuiz": [
+        
+      ]
+    }
+  ]
+}
