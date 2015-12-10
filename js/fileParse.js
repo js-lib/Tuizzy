@@ -12,12 +12,12 @@
     request.send();
   };
   
-  if (!window.Tuizzy) {
-    window.Tuizzy = {};
+  if (!context.Tuizzy) {
+    context.Tuizzy = {};
   }
   
   // A simple function to get an object form of a .tuiz file
-  window.Tuizzy.getTuizObject = function(name, callback) {
+  context.Tuizzy.getTuizObject = function(name, callback) {
     getTuizFile(name, function(content) {
       var object = JSON.parse(content);
       callback(object);
