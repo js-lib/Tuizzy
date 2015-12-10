@@ -14,6 +14,11 @@
   
   var Question = function(object) {
     this.timeLimit = object.time; // TODO: convert this to millis
+    this.question  = object.text;
+    this.answer    = object.answ;
+    this.type      = object.type;
+    this.options   = object.opts;
+    
     // TODO: finish
   };
   
