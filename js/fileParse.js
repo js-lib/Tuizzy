@@ -13,11 +13,38 @@
   };
   
   var Question = function(object) {
-    this.timeLimit = object.time; // TODO: convert this to millis
-    this.question  = object.text;
-    this.answer    = object.answ;
-    this.type      = object.type;
-    this.options   = object.opts;
+    var undefined; // To ensure undefined has the correct value 
+    
+    var timeLimit = object.time; // TODO: convert this to millis
+    var question  = object.text;
+    var answer    = object.answ;
+    var type      = object.type; // "choice", "blank", or "essay"
+    var options   = object.opts; // Optional
+    
+    var timeLeft = timeLimit;
+    var timeUp   = false;
+    
+    this.start = function() {
+      var willReturn = {
+        question: question,
+        type:     type,
+        options:  options,
+        timeUp:   false,
+        answer:   undefined
+      };
+      // Create willReturn here so it's accessible to below func
+      
+      var intervalID = context.setInterval( function() {
+        timeLeft -= 100;
+        if (timeLeft <= 0) {
+          timeUp = true;
+          willReturn.timeUp = true;
+          context.clearInterval(intervalID);
+        }
+      }, 100);
+      
+      return willReturn;
+    };
     
     // TODO: finish
   };
